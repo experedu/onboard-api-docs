@@ -255,12 +255,9 @@ html, body {
     font-size: 20px;
     margin-top: 4em;
     margin-bottom: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #eee;
     padding-top: 1.2em;
     padding-bottom: 1.2em;
-    @include background-image(
-      linear-gradient(top, rgba(#fff,0.4), rgba(#fff, 0))
-    );
   }
 
   // h2s right after h1s should bump right up
@@ -405,7 +402,7 @@ html, body {
     background-color: $code-bg;
     color: #fff;
 
-    padding: 2em $main-padding;
+    padding: 1em $main-padding;
     margin: 0;
     width: $examples-width;
 
@@ -413,7 +410,7 @@ html, body {
     clear:right;
 
     @include box-sizing(border-box);
-    @include text-shadow(0px 1px 2px rgba(0,0,0,0.4));
+    @include text-shadow(0px 1px 0 rgba(0,0,0,0.7));
 
     &>p { margin: 0; }
 
@@ -432,10 +429,13 @@ html, body {
     &>p {
       background-color: $code-annotation-bg;
       border-radius: 5px;
+      // box-shadow: inset 0 0 2px rgba(0,0,0,0.5);
       padding: $code-annotation-padding;
       color: #ccc;
-      border-top: 1px solid #000;
-      border-bottom: 1px solid #404040;
+      margin: 5px 0;
+    }
+    code {
+      background-color: tint($code-annotation-bg, 10%);
     }
   }
 }
